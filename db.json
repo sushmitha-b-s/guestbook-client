@@ -1,0 +1,16 @@
+{
+  "guestbook": [
+    {
+      "id": 1,
+      "name": "Sarah",
+      "email": "sarah@gmail.com",
+      "message": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur quos ipsam excepturi nesciunt veniam sequi, dignissimos deserunt voluptates facere natus vero praesentium iure quae debitis consequatur amet distinctio, optio minima."
+    },
+    {
+      "id": 2,
+      "name": "Adi",
+      "email": "adi@gmail.com",
+      "message": "Text messaging, or texting, is the act of composing and sending electronic messages, typically consisting of alphabetic and numeric characters, between two or more users of mobile devices, desktops/laptops, or other type of compatible computer."
+    }
+  ]
+}
