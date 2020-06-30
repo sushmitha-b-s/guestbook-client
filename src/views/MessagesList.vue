@@ -1,10 +1,13 @@
 <template>
   <div class="messages-list">
-    <MessagesItem
-      v-for="message in messages"
-      :key="message.id"
-      :message="message"
-    />
+    <p v-if="!messages.length">There are no messages yet.</p>
+    <div v-if="messages.length">
+      <MessagesItem
+        v-for="message in messages"
+        :key="message.id"
+        :message="message"
+      />
+    </div>
 
     <button>+ Create message</button>
 
