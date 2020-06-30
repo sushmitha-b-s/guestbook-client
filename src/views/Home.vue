@@ -1,14 +1,19 @@
 <template>
   <div class="home">
-    This is home page
+    <p>Leave a message to the world....</p>
+    <button @click="goToMessages">Get started</button>
   </div>
 </template>
 
 <script>
 export default {
   name: 'Home',
-  components: {}
+  methods: {
+    goToMessages() {
+      this.$router.push({
+        name: 'messages'
+      })
+    }
+  }
 }
 </script>
-
-<style lang="scss"></style>

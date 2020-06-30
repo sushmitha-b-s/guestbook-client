@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+nav {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 25px;
+  background-image: linear-gradient(
+    to right,
+    #dae2f8 0%,
+    #d6a4a4 51%,
+    #dae2f8 100%
+  );
+  .guestbook,
+  .messages {
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .router-link-exact-active {
+    color: #6588e7;
+    border-bottom: 2px solid #6588e7;
+    padding-bottom: 2px;
+  }
+}
+
+.home {
+  text-align: center;
+  margin-top: 200px;
+  p {
+    font-size: 25px;
+    color: #505050;
+  }
+  button {
+    background-color: #567eeb;
+    color: #fff;
+    padding: 10px 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+  }
+}
+
+.messages-list {
+  text-align: center;
+  margin-top: 200px;
+}
