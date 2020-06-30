@@ -15,12 +15,25 @@ export const actions = {
       .catch(error => {
         console.log(error)
       })
+  },
+
+  addMessage({ commit }, message) {
+    return GuestbookService.addMessage(message)
+      .then(() => {
+        commit('ADD_MESSAGE', message)
+      })
+      .catch(error => {
+        console.log(error)
+      })
   }
 }
 
 export const mutations = {
   SET_MESSAGES(state, messages) {
     state.messages = messages
+  },
+  ADD_MESSAGE(state, message) {
+    state.messages.push(message)
   }
 }
 

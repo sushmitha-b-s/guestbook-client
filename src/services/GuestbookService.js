@@ -12,5 +12,8 @@ const apiClient = axios.create({
 export default {
   getMessages() {
     return apiClient.get('/messages')
+  },
+  addMessage(message) {
+    return apiClient.post('/messages', message)
   }
 }
