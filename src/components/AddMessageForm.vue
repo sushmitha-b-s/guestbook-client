@@ -29,28 +29,17 @@
 <script>
 export default {
   name: 'AddMessageForm',
-
-  data() {
-    return {
-      message: this.createFreshMessageData()
+  props: {
+    message: {
+      type: Object,
+      required: true,
+      default: () => ({})
     }
   },
 
   methods: {
     addMessage() {
-      this.$store.dispatch('guestbook/addMessage', this.message).then(() => {
-        this.message = this.createFreshMessageData()
-      })
-    },
-
-    createFreshMessageData() {
-      const id = Math.floor(Math.random() * 10000000)
-      return {
-        id,
-        name: '',
-        email: '',
-        message: ''
-      }
+      this.$emit('clicked:add-message', this.message)
     }
   }
 }
