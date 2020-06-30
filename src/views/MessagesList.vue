@@ -7,17 +7,21 @@
     />
 
     <button>+ Create message</button>
+
+    <AddMessageForm />
   </div>
 </template>
 
 <script>
 import MessagesItem from '@/components/MessagesItem.vue'
 import { mapGetters } from 'vuex'
+import AddMessageForm from '@/components/AddMessageForm.vue'
 
 export default {
   name: 'MessagesList',
   components: {
-    MessagesItem
+    MessagesItem,
+    AddMessageForm
   },
 
   created() {

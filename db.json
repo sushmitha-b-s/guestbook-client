@@ -11,6 +11,18 @@
       "name": "Adi",
       "email": "adi@gmail.com",
       "message": "Text messaging, or texting, is the act of composing and sending electronic messages, typically consisting of alphabetic and numeric characters, between two or more users of mobile devices, desktops/laptops, or other type of compatible computer."
+    },
+    {
+      "id": 865270,
+      "name": "BS Sushmitha",
+      "email": "bssushmitha26@gmail.com",
+      "message": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat provident ab iusto qui, veritatis ea rem, mollitia fuga minus quae, quasi velit? Esse blanditiis vero reprehenderit officiis rem eos dicta."
+    },
+    {
+      "id": 7121425,
+      "name": "honey",
+      "email": "honey@gmail.com",
+      "message": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat provident ab iusto qui, veritatis ea rem, mollitia fuga minus quae, quasi velit? Esse blanditiis vero reprehenderit officiis rem eos dicta."
     }
   ]
 }
