@@ -8,7 +8,7 @@
 
     <button>+ Create message</button>
 
-    <AddMessageForm />
+    <AddMessageForm :message="this.message" @clicked:add-message="addMessage" />
   </div>
 </template>
 
@@ -24,6 +24,12 @@ export default {
     AddMessageForm
   },
 
+  data() {
+    return {
+      message: this.createFreshMessageData()
+    }
+  },
+
   created() {
     this.$store.dispatch('guestbook/fetchMessages')
   },
@@ -32,6 +38,23 @@ export default {
     ...mapGetters({
       messages: 'guestbook/messages'
     })
+  },
+
+  methods: {
+    createFreshMessageData() {
+      const id = Math.floor(Math.random() * 10000000)
+      return {
+        id,
+        name: '',
+        email: '',
+        message: ''
+      }
+    },
+    addMessage(message) {
+      this.$store.dispatch('guestbook/addMessage', message).then(() => {
+        this.message = this.createFreshMessageData()
+      })
+    }
   }
 }
 </script>
