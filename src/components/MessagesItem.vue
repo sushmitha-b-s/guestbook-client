@@ -2,13 +2,15 @@
   <div class="messages-item">
     <div>
       <v-flex class="d-flex justify-end">
-        <!-- <v-btn color="red lighten-2" dark class="ma-0 pa-0"
-          ><v-icon>mdi-pencil</v-icon></v-btn
-        > -->
-
-        <v-dialog v-model="dialog" width="500" class="ma-0 pa-0">
+        <v-dialog v-model="dialog" width="500">
           <template v-slot:activator="{ on, attrs }">
-            <v-btn color="red lighten-2" dark v-bind="attrs" v-on="on">
+            <v-btn
+              color="red lighten-2"
+              dark
+              v-bind="attrs"
+              v-on="on"
+              class="ma-0 pa-0"
+            >
               <v-icon>mdi-pencil</v-icon>
             </v-btn>
           </template>
@@ -43,7 +45,9 @@
 
       <p><span>Name: </span>{{ message.name }}</p>
       <p><span>Email-Id: </span>{{ message.email }}</p>
-      <p>"{{ message.message }}"</p>
+      <p>
+        <i>"{{ message.message }}"</i>
+      </p>
     </div>
   </div>
 </template>

@@ -39,7 +39,6 @@ export const actions = {
 
   editMessage({ commit }, message) {
     return GuestbookService.editMessage(message).then(response => {
-      console.log(response)
       commit('EDIT_MESSAGE', response.data)
     })
   }
