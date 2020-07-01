@@ -1,33 +1,15 @@
 {
   "messages": [
     {
-      "id": 1,
-      "name": "Sarah",
-      "email": "sarah@gmail.com",
-      "message": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Pariatur quos ipsam excepturi nesciunt veniam sequi, dignissimos deserunt voluptates facere natus vero praesentium iure quae debitis consequatur amet distinctio, optio minima."
-    },
-    {
-      "id": 6476486,
-      "name": "adi@gmail.com",
-      "email": "adi@gmail.com",
-      "message": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat provident ab iusto qui, veritatis ea rem, mollitia fuga minus quae, quasi velit? Esse blanditiis vero reprehenderit officiis rem eos dicta."
-    },
-    {
-      "id": 7162301,
-      "name": "Sushmitha BS",
-      "email": "bssushmitha26@gmail.com",
-      "message": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat provident ab iusto qui, veritatis ea rem, mollitia fuga minus quae, quasi velit? Esse blanditiis vero reprehenderit officiis rem eos dicta."
-    },
-    {
-      "id": 8334511,
-      "name": "My sweet honey",
-      "email": "guledalprashanth@gmail.com",
-      "message": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat provident ab iusto qui, veritatis ea rem, mollitia fuga minus quae, quasi velit? Esse blanditiis vero reprehenderit officiis rem eos dicta."
-    },
-    {
       "id": 9198466,
       "name": "Gregg Polling",
       "email": "gregg@gmail.com",
+      "message": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat provident ab iusto qui, veritatis ea rem, mollitia fuga minus quae, quasi velit? Esse blanditiis vero reprehenderit officiis rem eos dicta."
+    },
+    {
+      "id": 2232897,
+      "name": "Adam Jahr",
+      "email": "adam@gmail.com",
       "message": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellat provident ab iusto qui, veritatis ea rem, mollitia fuga minus quae, quasi velit? Esse blanditiis vero reprehenderit officiis rem eos dicta."
     }
   ]
