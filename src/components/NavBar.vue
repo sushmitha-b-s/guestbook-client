@@ -1,17 +1,20 @@
 <template>
   <div>
     <nav>
-      <div>
-        <router-link :to="{ name: 'home' }" class="guestbook"
-          >Guestbook</router-link
-        >
+      <div class="logo">
+        <v-btn icon color="#fff">
+          <router-link :to="{ name: 'home' }">
+            <v-icon large class="mr-1">mdi-home-city</v-icon>
+            Guestbook
+          </router-link>
+        </v-btn>
       </div>
-      <div>
-        <router-link :to="{ name: 'messages' }" class="messages"
-          >messages</router-link
-        >
+
+      <div class="messages">
+        <router-link :to="{ name: 'messages' }">messages</router-link>
       </div>
     </nav>
+    <!-- router-link-exact-active router-link-active -->
   </div>
 </template>
 

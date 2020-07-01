@@ -49,7 +49,7 @@ export const mutations = {
     state.messages = messages
   },
   ADD_MESSAGE(state, message) {
-    state.messages.push(message)
+    state.messages.unshift(message)
   },
   DELETE_MESSAGE(state, messageId) {
     state.messages = state.messages.filter(message => message.id !== messageId)
