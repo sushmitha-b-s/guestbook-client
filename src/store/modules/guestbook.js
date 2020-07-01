@@ -35,6 +35,12 @@ export const actions = {
       .catch(error => {
         console.log(error)
       })
+  },
+
+  editMessage({ commit }, message) {
+    return GuestbookService.editMessage(message).then(response => {
+      commit('EDIT_MESSAGE', response.data)
+    })
   }
 }
 
@@ -47,6 +53,14 @@ export const mutations = {
   },
   DELETE_MESSAGE(state, messageId) {
     state.messages = state.messages.filter(message => message.id !== messageId)
+  },
+  EDIT_MESSAGE(state, message) {
+    state.messages = state.messages.map(m => {
+      if (m.id === message.id) {
+        m = message
+      }
+      return m
+    })
   }
 }
 

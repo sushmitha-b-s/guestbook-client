@@ -2,9 +2,37 @@
   <div class="messages-item">
     <div>
       <v-flex class="d-flex justify-end">
-        <v-btn color="red lighten-2" dark class="ma-0 pa-0"
-          ><v-icon>mdi-pencil</v-icon></v-btn
-        >
+        <v-dialog v-model="dialog" width="500">
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn
+              color="red lighten-2"
+              dark
+              v-bind="attrs"
+              v-on="on"
+              class="ma-0 pa-0"
+            >
+              <v-icon>mdi-pencil</v-icon>
+            </v-btn>
+          </template>
+
+          <v-card>
+            <v-card-title class="headline">
+              <p>Edit message</p>
+              <v-spacer></v-spacer>
+              <v-btn icon ml-4 @click="dialog = false">
+                <v-icon>mdi-close</v-icon>
+              </v-btn>
+            </v-card-title>
+
+            <v-card-text>
+              <AddMessageForm
+                :message="editingMessage"
+                @clicked:add-message="editMessage"
+              />
+            </v-card-text>
+          </v-card>
+        </v-dialog>
+
         <v-btn
           color="red lighten-2"
           dark
@@ -17,14 +45,22 @@
 
       <p><span>Name: </span>{{ message.name }}</p>
       <p><span>Email-Id: </span>{{ message.email }}</p>
-      <p>"{{ message.message }}"</p>
+      <p>
+        <i>"{{ message.message }}"</i>
+      </p>
     </div>
   </div>
 </template>
 
 <script>
+import AddMessageForm from './AddMessageForm'
+
 export default {
   name: 'MessagesItem',
+  components: {
+    AddMessageForm
+  },
+
   props: {
     message: {
       type: Object,
@@ -35,7 +71,9 @@ export default {
 
   data() {
     return {
-      loading: false
+      loading: false,
+      dialog: false,
+      editingMessage: this.message
     }
   },
 
@@ -44,6 +82,12 @@ export default {
       this.loading = true
       this.$store.dispatch('guestbook/deleteMessage', message).then(() => {
         this.loading = false
+      })
+    },
+
+    editMessage(message) {
+      this.$store.dispatch('guestbook/editMessage', message).then(() => {
+        this.dialog = false
       })
     }
   }
