@@ -24,4 +24,4 @@ A simple Vue.js CRUD application that helps users to share any thoughts with the
 
 ## Working app demo
 
-![Working app demo](src/assets/guestbook.mp4)
+![Working app demo](src/assets/guestbook.gif)
