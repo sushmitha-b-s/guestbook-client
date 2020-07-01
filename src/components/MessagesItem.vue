@@ -5,7 +5,12 @@
         <v-btn color="red lighten-2" dark class="ma-0 pa-0"
           ><v-icon>mdi-pencil</v-icon></v-btn
         >
-        <v-btn color="red lighten-2" dark class="ma-0 pa-0 ml-2"
+        <v-btn
+          color="red lighten-2"
+          dark
+          class="ma-0 pa-0 ml-2"
+          @click="deleteMessage(message)"
+          :loading="loading"
           ><v-icon>mdi-delete</v-icon></v-btn
         >
       </v-flex>
@@ -25,6 +30,21 @@ export default {
       type: Object,
       required: true,
       default: () => ({})
+    }
+  },
+
+  data() {
+    return {
+      loading: false
+    }
+  },
+
+  methods: {
+    deleteMessage(message) {
+      this.loading = true
+      this.$store.dispatch('guestbook/deleteMessage', message).then(() => {
+        this.loading = false
+      })
     }
   }
 }

@@ -15,5 +15,8 @@ export default {
   },
   addMessage(message) {
     return apiClient.post('/messages', message)
+  },
+  deleteMessage(message) {
+    return apiClient.delete(`messages/${message.id}`)
   }
 }
