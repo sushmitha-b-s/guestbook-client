@@ -6,29 +6,72 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+// nav {
+//   text-align: center;
+//   // display: flex;
+//   // flex-direction: row;
+//   // justify-content: space-around;
+//   padding: 25px;
+//   background-image: linear-gradient(
+//     to right,
+//     #dae2f8 0%,
+//     #d6a4a4 51%,
+//     #dae2f8 100%
+//   );
+//   .guestbook,
+//   .messages {
+//     color: #fff;
+//     text-decoration: none;
+//     text-transform: uppercase;
+//   }
+
+//   .router-link-exact-active {
+//     color: #6588e7;
+//     border-bottom: 2px solid #6588e7;
+//     padding-bottom: 2px;
+//   }
+// }
+
 nav {
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 25px;
   background-image: linear-gradient(
     to right,
     #dae2f8 0%,
     #d6a4a4 51%,
     #dae2f8 100%
   );
-  .guestbook,
-  .messages {
-    color: #fff;
-    text-decoration: none;
-    text-transform: uppercase;
-  }
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   .router-link-exact-active {
-    color: #6588e7;
-    border-bottom: 2px solid #6588e7;
+    border-bottom: 2px solid #fff;
     padding-bottom: 2px;
+  }
+
+  .logo {
+    margin-left: 70px;
+    border: none;
+
+    a {
+      text-decoration: none;
+      border: none;
+      color: #fff;
+      font-size: 22px;
+      text-transform: initial;
+      margin-left: 10px;
+    }
+  }
+
+  .messages {
+    margin-right: 200px;
+    text-transform: uppercase;
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 500;
+      font-size: 17px;
+    }
   }
 }
 
