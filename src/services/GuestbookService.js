@@ -18,5 +18,8 @@ export default {
   },
   deleteMessage(message) {
     return apiClient.delete(`messages/${message.id}`)
+  },
+  editMessage(message) {
+    return apiClient.put(`/messages/${message.id}`, message)
   }
 }
