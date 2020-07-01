@@ -1,28 +1,32 @@
 <template>
-  <div class="add-message">
-    <form @submit.prevent="addMessage">
-      <div>
-        <label for="name">Name: </label>
-        <input type="text" name="name" v-model="message.name" />
-      </div>
+  <div>
+    <v-form @submit.prevent="addMessage">
+      <v-text-field
+        label="Name"
+        v-model="message.name"
+        color="#d6a4a4"
+        autocomplete="off"
+        prepend-icon="mdi-account"
+      />
 
-      <div>
-        <label for="email">Email: </label>
-        <input type="text" name="email" v-model="message.email" />
-      </div>
+      <v-text-field
+        label="Email"
+        v-model="message.email"
+        color="#d6a4a4"
+        autocomplete="off"
+        prepend-icon="mdi-email"
+      />
 
-      <div>
-        <label for="message">Message: </label>
-        <textarea
-          name="message"
-          cols="30"
-          rows="10"
-          v-model="message.message"
-        ></textarea>
-      </div>
+      <v-textarea
+        label="Leave a message"
+        v-model="message.message"
+        color="#d6a4a4"
+        autocomplete="off"
+        prepend-icon="mdi-message-text"
+      />
 
-      <button type="submit">submit</button>
-    </form>
+      <v-btn type="submit" color="red lighten-2" dark ml-3>submit</v-btn>
+    </v-form>
   </div>
 </template>
 
