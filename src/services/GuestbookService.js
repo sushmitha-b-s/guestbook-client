@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const apiClient = axios.create({
-  baseURL: 'http://localhost:3000/',
+  baseURL: 'http://localhost:4000/',
   withCredentials: false,
   headers: {
     Accept: 'application/json',
@@ -17,7 +17,7 @@ export default {
     return apiClient.post('/messages', message)
   },
   deleteMessage(message) {
-    return apiClient.delete(`messages/${message.id}`)
+    return apiClient.delete(`/messages/${message.id}`)
   },
   editMessage(message) {
     return apiClient.put(`/messages/${message.id}`, message)

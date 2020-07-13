@@ -1,11 +1,11 @@
 <template>
+  <!-- eslint-disable prettier/prettier -->
   <div class="messages-list">
     <div class="text-center">
       <v-dialog v-model="dialog" width="500">
         <template v-slot:activator="{ on, attrs }">
           <v-btn color="red lighten-2" dark v-bind="attrs" v-on="on">
-            <v-icon>mdi-plus</v-icon>
-            Create Message
+            <v-icon>mdi-plus</v-icon>Create Message
           </v-btn>
         </template>
 
@@ -19,10 +19,7 @@
           </v-card-title>
 
           <v-card-text>
-            <AddMessageForm
-              :message="this.message"
-              @clicked:add-message="addMessage"
-            />
+            <AddMessageForm :message="this.message" @clicked:add-message="addMessage" />
           </v-card-text>
         </v-card>
       </v-dialog>
@@ -30,16 +27,8 @@
 
     <p v-if="!messages.length">There are no messages yet.</p>
     <div v-if="messages.length">
-      <MessagesItem
-        v-for="message in messages"
-        :key="message.id"
-        :message="message"
-      />
+      <MessagesItem v-for="(message, index) in messages" :key="index" :message="message" />
     </div>
-
-    <!-- <button>+ Create message</button>
-
-    <AddMessageForm :message="this.message" @clicked:add-message="addMessage" /> -->
   </div>
 </template>
 
@@ -74,9 +63,7 @@ export default {
 
   methods: {
     createFreshMessageData() {
-      const id = Math.floor(Math.random() * 10000000)
       return {
-        id,
         name: '',
         email: '',
         message: ''
