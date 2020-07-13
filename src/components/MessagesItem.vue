@@ -1,16 +1,11 @@
 <template>
+  <!-- eslint-disable prettier/prettier -->
   <div class="messages-item">
     <div>
       <v-flex class="d-flex justify-end">
         <v-dialog v-model="dialog" width="500">
           <template v-slot:activator="{ on, attrs }">
-            <v-btn
-              color="red lighten-2"
-              dark
-              v-bind="attrs"
-              v-on="on"
-              class="ma-0 pa-0"
-            >
+            <v-btn color="red lighten-2" dark v-bind="attrs" v-on="on" class="ma-0 pa-0">
               <v-icon>mdi-pencil</v-icon>
             </v-btn>
           </template>
@@ -25,10 +20,7 @@
             </v-card-title>
 
             <v-card-text>
-              <AddMessageForm
-                :message="editingMessage"
-                @clicked:add-message="editMessage"
-              />
+              <AddMessageForm :message="editingMessage" @clicked:add-message="editMessage" />
             </v-card-text>
           </v-card>
         </v-dialog>
@@ -39,12 +31,19 @@
           class="ma-0 pa-0 ml-2"
           @click="deleteMessage(message)"
           :loading="loading"
-          ><v-icon>mdi-delete</v-icon></v-btn
         >
+          <v-icon>mdi-delete</v-icon>
+        </v-btn>
       </v-flex>
 
-      <p><span>Name: </span>{{ message.name }}</p>
-      <p><span>Email-Id: </span>{{ message.email }}</p>
+      <p>
+        <span>Name:</span>
+        {{ message.name }}
+      </p>
+      <p>
+        <span>Email-Id:</span>
+        {{ message.email }}
+      </p>
       <p>
         <i>"{{ message.message }}"</i>
       </p>

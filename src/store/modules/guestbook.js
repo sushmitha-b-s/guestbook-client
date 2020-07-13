@@ -19,8 +19,8 @@ export const actions = {
 
   addMessage({ commit }, message) {
     return GuestbookService.addMessage(message)
-      .then(() => {
-        commit('ADD_MESSAGE', message)
+      .then(response => {
+        commit('ADD_MESSAGE', response.data)
       })
       .catch(error => {
         console.log(error)
