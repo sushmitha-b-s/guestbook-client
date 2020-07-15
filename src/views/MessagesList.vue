@@ -66,7 +66,8 @@ export default {
       return {
         name: '',
         email: '',
-        message: ''
+        message: '',
+        profilePic: ''
       }
     },
     addMessage(message) {

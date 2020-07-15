@@ -20,6 +20,7 @@ export default {
     return apiClient.delete(`/messages/${message.id}`)
   },
   editMessage(message) {
-    return apiClient.put(`/messages/${message.id}`, message)
+    const id = parseInt(message.get('id'))
+    return apiClient.put(`/messages/${id}`, message)
   }
 }

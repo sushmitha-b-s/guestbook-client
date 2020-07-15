@@ -5,7 +5,14 @@
       <v-flex class="d-flex justify-end">
         <v-dialog v-model="dialog" width="500">
           <template v-slot:activator="{ on, attrs }">
-            <v-btn color="red lighten-2" dark v-bind="attrs" v-on="on" class="ma-0 pa-0">
+            <v-btn
+              color="red lighten-2"
+              dark
+              v-bind="attrs"
+              v-on="on"
+              class="ma-0 pa-0"
+              @click="updateMessage"
+            >
               <v-icon>mdi-pencil</v-icon>
             </v-btn>
           </template>
@@ -46,6 +53,10 @@
       </p>
       <p>
         <i>"{{ message.message }}"</i>
+      </p>
+
+      <p>
+        <img :src="`http://localhost:4000/${message.profilePic}`" alt />
       </p>
     </div>
   </div>
@@ -88,7 +99,17 @@ export default {
       this.$store.dispatch('guestbook/editMessage', message).then(() => {
         this.dialog = false
       })
+    },
+    updateMessage() {
+      this.editingMessage = this.message
     }
   }
 }
 </script>
+
+<style scoped>
+img {
+  width: 200px;
+  height: 200px;
+}
+</style>

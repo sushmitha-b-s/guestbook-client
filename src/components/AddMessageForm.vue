@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-form @submit.prevent="addMessage">
+    <v-form @submit.prevent="addMessage" enctype="multipart/form-data">
       <v-text-field
         label="Name"
         v-model="message.name"
@@ -25,6 +25,8 @@
         prepend-icon="mdi-message-text"
       />
 
+      <input type="file" @change="upload" />
+
       <v-btn type="submit" color="red lighten-2" dark ml-3>submit</v-btn>
     </v-form>
   </div>
@@ -41,9 +43,28 @@ export default {
     }
   },
 
+  data() {
+    return {
+      file: ''
+    }
+  },
+
   methods: {
     addMessage() {
-      this.$emit('clicked:add-message', this.message)
+      const formData = new FormData()
+      formData.append('profilePic', this.file)
+      formData.append('name', this.message.name)
+      formData.append('email', this.message.email)
+      formData.append('message', this.message.message)
+      if (this.message.id) {
+        formData.append('id', parseInt(this.message.id))
+      }
+
+      this.$emit('clicked:add-message', formData)
+    },
+
+    upload(e) {
+      this.file = e.target.files[0]
     }
   }
 }
